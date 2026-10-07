@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanchita Kadukar | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--or:#ff7a1a;--bl:#1e6bff;--pk:#ffe3ee;--pk2:#fff3f8;--bg:#ffffff;--text:#1d2440;--muted:#5f6786;--line:#ffd9e8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;height:auto}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 22px;padding:14px 16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--pk)}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:600;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:3px;width:0;background:var(--or);border-radius:3px;transition:width .3s}
+nav a:hover{color:var(--bl)}nav a:hover::after{width:100%}
+.hero{position:relative;text-align:center;padding:90px 20px 100px;background:linear-gradient(160deg,var(--pk2),var(--pk) 55%,#e4eeff);overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;animation:float 9s ease-in-out infinite}
+.b1{width:220px;height:220px;background:var(--or);top:-70px;left:-60px}
+.b2{width:180px;height:180px;background:var(--bl);bottom:-60px;right:-40px;animation-delay:-3s}
+.b3{width:90px;height:90px;background:#ff9ec4;top:40%;right:12%;animation-delay:-6s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18px,-26px) scale(1.08)}}
+.avatar{position:relative;width:124px;height:124px;border-radius:50%;background:linear-gradient(135deg,var(--or),var(--bl));color:#fff;display:grid;place-items:center;font:700 2.8rem 'Playfair Display',serif;margin:0 auto 22px;box-shadow:0 10px 28px rgba(30,107,255,.3);animation:pop 1s cubic-bezier(.2,1.4,.4,1) both}
+.avatar::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:3px dashed var(--or);animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.hero h1{position:relative;font:700 clamp(2.1rem,6vw,3.6rem) 'Playfair Display',serif;color:var(--text);animation:rise .9s .2s both}
+.hero h1 span{color:var(--or)}
+.role{position:relative;margin:10px auto 6px;font-weight:600;color:var(--bl);min-height:1.7em;animation:rise .9s .4s both}
+.hero p.sub{position:relative;max-width:540px;margin:0 auto 26px;color:var(--muted);animation:rise .9s .6s both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.btn{position:relative;display:inline-block;padding:12px 30px;border-radius:30px;background:var(--or);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(255,122,26,.35);animation:rise .9s .8s both,pulse 2.4s 2s infinite}
+.btn:hover{background:var(--bl)}
+@keyframes pulse{50%{box-shadow:0 8px 30px rgba(255,122,26,.65)}}
+section{max-width:980px;margin:0 auto;padding:64px 20px}
+h2{font:700 1.9rem 'Playfair Display',serif;margin-bottom:28px;text-align:center}
+h2::after{content:"";display:block;width:70px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--or),var(--bl));margin:8px auto 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;border:2px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 6px 18px rgba(30,107,255,.07);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--or);box-shadow:0 12px 26px rgba(255,122,26,.18)}
+.pinkbg{background:var(--pk2)}
+.card h3{font-size:1.05rem;margin-bottom:4px;color:var(--bl)}
+.card small{color:var(--muted)}
+.tag{display:inline-block;margin-top:10px;padding:3px 14px;border-radius:20px;background:var(--or);color:#fff;font-size:.8rem;font-weight:600}
+.tag.blue{background:var(--bl)}
+.icon{font-size:2.2rem;display:inline-block;transition:transform .3s}
+.card:hover .icon{animation:wiggle .6s}
+@keyframes wiggle{25%{transform:rotate(-14deg) scale(1.15)}75%{transform:rotate(14deg) scale(1.15)}}
+.skill{margin-bottom:18px}
+.skill span{display:flex;justify-content:space-between;font-weight:600;font-size:.92rem}
+.bar{height:11px;border-radius:11px;background:var(--pk);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;width:0;border-radius:11px;background:linear-gradient(90deg,var(--or),var(--bl));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.center{text-align:center}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{padding:10px 20px;border-radius:30px;font-weight:600;background:var(--pk);color:var(--text);border:2px solid transparent;transition:.25s}
+.chip:hover{background:var(--bl);color:#fff;transform:scale(1.08) rotate(-2deg)}
+footer{text-align:center;padding:30px 16px;color:var(--muted);font-size:.85rem;background:var(--pk2);border-top:3px solid var(--or)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.bar i{width:var(--w)!important}}
+</style>
+</head>
+<body>
+<nav><a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#achievements">Achievements</a><a href="#hobbies">Hobbies</a></nav>
+
+<header class="hero" id="home">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="avatar">SK</div>
+  <h1>Hi, I'm <span>Sanchita</span> Kadukar</h1>
+  <div class="role" id="role">BCA Student</div>
+  <p class="sub">Learning to build for the web, one line of code at a time, and a sports and arts lover off the screen.</p>
+  <a class="btn" href="#education">Explore my journey</a>
+</header>
+
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <div class="card pinkbg center">
+    <p>I'm a curious and hardworking student pursuing my Bachelor of Computer Applications at SKE BCA College, Chandgad. I enjoy building web pages with HTML, CSS and Bootstrap, writing programs in C and Java, and exploring Artificial Intelligence. Outside the classroom I love traditional and team sports like kho-kho, cricket, langdi and lagori, along with dancing and singing.</p>
+  </div>
+</section>
+
+<section id="education" class="reveal">
+  <h2>Education</h2>
+  <div class="grid">
+    <div class="card"><div class="icon">🎓</div><h3>BCA &ndash; Semester 1</h3><small>SKE BCA College, Chandgad</small><br><span class="tag blue">Pursuing</span></div>
+    <div class="card"><div class="icon">📘</div><h3>12th (HSC)</h3><small>N.B. Patil Jr College, Chandgad</small><br><span class="tag">60%</span></div>
+    <div class="card"><div class="icon">🏫</div><h3>10th (SSC)</h3><small>The New English School, Chandgad</small><br><span class="tag">75%</span></div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <h2>Technical Skills</h2>
+  <div class="card">
+    <div class="skill"><span>HTML</span><div class="bar"><i style="--w:80%" data-w="80"></i></div></div>
+    <div class="skill"><span>CSS</span><div class="bar"><i style="--w:75%" data-w="75"></i></div></div>
+    <div class="skill"><span>Bootstrap</span><div class="bar"><i style="--w:70%" data-w="70"></i></div></div>
+    <div class="skill"><span>C Programming</span><div class="bar"><i style="--w:70%" data-w="70"></i></div></div>
+    <div class="skill"><span>Java</span><div class="bar"><i style="--w:60%" data-w="60"></i></div></div>
+  </div>
+</section>
+
+<section id="achievements" class="reveal">
+  <h2>Achievements &amp; Certifications</h2>
+  <div class="grid">
+    <div class="card center"><div class="icon">🥇</div><h3>1st Place</h3><small>Poster Presentation on World Ozone Day</small></div>
+    <div class="card center"><div class="icon">🥈</div><h3>2nd Place</h3><small>Kho-Kho</small></div>
+    <div class="card center pinkbg"><div class="icon">🤖</div><h3>Certified Course</h3><small>Artificial Intelligence</small></div>
+    <div class="card center pinkbg"><div class="icon">🏏</div><h3>Certified Course</h3><small>Cricket</small></div>
+    <div class="card center pinkbg"><div class="icon">🎯</div><h3>Certified Course</h3><small>Lagori</small></div>
+  </div>
+</section>
+
+<section id="hobbies" class="reveal">
+  <h2>Hobbies</h2>
+  <div class="chips">
+    <div class="chip">🏃‍♀️ Kho-Kho</div><div class="chip">🏏 Cricket</div><div class="chip">💃 Dancing</div>
+    <div class="chip">🎤 Singing</div><div class="chip">🤸‍♀️ Langdi</div><div class="chip">🎯 Lagori</div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Sanchita Kadukar &bull; BCA Student, Chandgad</footer>
+
+<script>
+(function(){
+  var roles=["BCA Student","Aspiring Web Developer","Kho-Kho Player","AI Enthusiast"],ri=0,ci=0,del=false,el=document.getElementById('role');
+  function type(){
+    var w=roles[ri];
+    el.textContent=w.slice(0,ci)+"|";
+    if(!del&&ci<w.length){ci++;setTimeout(type,90)}
+    else if(!del){del=true;setTimeout(type,1400)}
+    else if(ci>0){ci--;setTimeout(type,45)}
+    else{del=false;ri=(ri+1)%roles.length;setTimeout(type,300)}
+  }
+  type();
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.dataset.w+'%'});
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(s){io.observe(s)});
+})();
+</script>
+</body>
+</html>
